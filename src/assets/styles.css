@@ -1,0 +1,292 @@
+/* RemoteStorage widget styles */
+
+.rs-widget * {
+  box-sizing: border-box;
+}
+
+.rs-widget {
+  font-family: arial, sans-serif;
+  max-width: 350px;
+  color: #333;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+  overflow: hidden;
+  z-index: 21000000; /* Make sure we're on a reasonably high visibility layer */
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 3px 8px 0 rgba(0,0,0,0.2);
+  will-change: max-height, height, width, opacity, max-width, background, box-shadow;
+  transition-property: width, height, opacity, max-width, max-height, background, box-shadow;
+  transition-duration: 300ms;
+}
+
+.rs-box {
+  overflow: hidden;
+  will-change: height;
+  transition-property: height, width, max-height;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+  opacity: 0;
+  max-height: 0px;
+}
+
+.rs-box.selected {
+  opacity: 1;
+  max-height: 400px;
+}
+
+/* Main logo */
+.rs-main-logo {
+  float: left;
+  height: 36px;
+  width: auto;
+  margin-top: 1px;
+  margin-right: 0.625em;
+  transition: margin-left 300ms ease-out, transform 300ms ease-out;
+  cursor: pointer;
+}
+
+polygon.rs-logo-shape {
+  fill: #FF4B03;
+  transition-property: fill;
+  transition-duration: 0.5s;
+}
+
+.rs-state-offline polygon.rs-logo-shape {
+  fill: #888;
+  transition-property: fill;
+  transition-duration: 0.5s;
+}
+
+/* Hide everything except logo when connected and clicked outside of box */
+.rs-state-close {
+  max-width: 55px;
+  background-color: transparent;
+  box-shadow: none;
+  opacity: 0.5;
+
+  transition: max-height 100ms ease-out 0ms, max-width 300ms ease-out 300ms, background 300ms ease-in 200ms, opacity 300ms ease 200ms; 
+}
+
+.rs-state-close:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+/* Initial Connect remote storage box */
+.rs-box-initial:hover {
+  cursor: pointer;
+}
+
+.rs-widget a {
+  color: #0093cc;
+}
+
+/* HEADLINE */
+.rs-small-headline {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 2px;
+  height: 1.1em;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.rs-sub-headline {
+  word-break: break-all;
+  overflow: hidden;
+  color: #666;
+  font-size: 0.92em;
+  height: 1.2em;
+}
+.rs-big-headline {
+  font-size: 1.625em;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* BUTTONS  */
+.rs-button {
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.rs-button-small {
+  padding: 0.5em 0.6em;
+  margin-left: 0.3em;
+  transition: border-color 300ms ease-out;
+}
+.rs-button-wrap {
+  margin-top: 10px;
+}
+
+.rs-button-wrap img,
+.rs-button-wrap svg {
+  float: left;
+  margin-right: 0.6em;
+  width: 40px;
+  height: 40px;
+}
+
+.rs-button-big {
+  padding: 15px 10px;
+  margin-bottom: 10px;
+  display: block;
+  width: 100%;
+  text-align: left;
+  transition: box-shadow 200ms;
+}
+.rs-button-big > div {
+  font-size: 1.125em;
+  padding: 10px 0;
+}
+.rs-button-big:hover {
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 3px 8px 0 rgba(0,0,0,0.2);
+}
+.rs-button-big:active {
+  background-color: #eee;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 3px 8px 0 rgba(0,0,0,0.2);
+}
+.rs-button-big:last-child {
+  margin-bottom: 0;
+}
+
+.rs-content {
+  padding: 0 10px 10px 10px;
+}
+
+
+.rs-state-choose .rs-main-logo,
+.rs-state-sign-in .rs-main-logo {
+  margin-left: 45%;
+  float: none;
+}
+
+
+.rs-sign-in-form input[type=text] {
+  padding: 15px 10px;
+  display: block;
+  width: 100%;
+  font: inherit;
+  border: 1px solid #aaa;
+}
+.rs-sign-in-form input[type=submit] {
+  padding: 15px 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  background-color: #3fb34f;
+  font: inherit;
+  color: #fff;
+  transition: box-shadow 200ms, background-color 200ms;
+}
+.rs-sign-in-form input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #4BCB5D;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1), 0 3px 8px 0 rgba(0,0,0,0.2);
+}
+.rs-sign-in-form input[type=submit]:active {
+  background-color: #3fb34f;
+}
+
+.rs-sign-in-error.hidden,
+.rs-box-error.hidden {
+  height: 0;
+}
+
+.rs-sign-in-error.visible,
+.rs-box-error.visible {
+  height: auto;
+  border-radius: 3px;
+  padding: 0.5em 0.5em;
+  margin-top: 0.5em;
+  text-align: center;
+  background-color: rgba(255,0,0,0.1);
+  color: darkred;
+}
+
+ /*Choose provider box */
+.rs-box-choose {
+  text-align: center;
+  overflow: hidden;
+}
+.rs-box-choose .rs-big-headline {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.rs-box-choose p {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/*Connected box */
+.rs-box-connected {
+  height: 40px;
+}
+.rs-connected-text {
+  float: left;
+}
+.rs-box-connected .rs-user {
+  font-weight: bold;
+}
+.rs-connected-buttons {
+  float: right;
+}
+.rs-disconnect:hover {
+  border-color: #FF2D2D;
+}
+.rs-disconnect:hover .rs-icon{
+  fill: #FF2D2D;
+}
+.rs-sync:hover {
+  border-color: #FFBB0C;
+}
+.rs-sync:hover .rs-icon {
+  fill: #FFBB0C;
+}
+.rs-sync.rs-rotate {
+  border-color: #FFBB0C;
+}
+.rs-sync.rs-rotate .rs-icon {
+  fill: #FFBB0C;
+  animation: rs-spin 1s linear infinite;
+}
+@keyframes rs-spin { 100% { transform: rotate(360deg); transform:rotate(360deg); } }
+
+/* Floating widget styles (top right corner) */
+.rs-floating {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+
+/* Small/mobile screens */
+@media screen and (max-width: 360px) {
+  .rs-widget {
+    font-size: 100%;
+    padding: 10px;
+    transition: all 300ms ease-out;
+  }
+  .rs-floating {
+    position: relative;
+    top: auto;
+    right: auto
+  }
+  .rs-state-choose,
+  .rs-state-sign-in {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    border-radius: 0;
+    height: 100%;
+    max-width: 100%;
+  }
+}
