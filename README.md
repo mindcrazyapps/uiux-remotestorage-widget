@@ -16,6 +16,11 @@
  <img src="https://user-images.githubusercontent.com/123137817/214212225-2e8193cd-d4f0-4a24-aee1-ff31b33fdf2a.png" alt="image">
 </p>
 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/123137817/214212564-e3a65a0f-497f-4827-9b6d-2f79852eccc4.png" alt="image">
+</p>
+
+
 # remotestorage-widget [WORK IN PROGRESS]
 
 Provides a connect-widget as add-on library for remoteStorage.js.
