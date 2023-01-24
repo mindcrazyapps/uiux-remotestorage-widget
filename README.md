@@ -6,9 +6,15 @@
  <img src="https://cdn-icons-png.flaticon.com/512/1600/1600856.png" alt="image" width="70px">
 </p>
 
-
 <h4 align="center"> Please see this live demo <a href="https://tiddlywiki-store.netlify.app/"> here </a>  and the documentation <a href="https://mindcrazyapps.github.io/tiddlywiki-store/#/"> here </a> here </h3>
 
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/123137817/214212215-a0b1c3eb-664d-442f-b235-17f531874de3.png" alt="image">
+</p>
+
+<p align="center">
+ <img src="https://user-images.githubusercontent.com/123137817/214212225-2e8193cd-d4f0-4a24-aee1-ff31b33fdf2a.png" alt="image">
+</p>
 
 # remotestorage-widget [WORK IN PROGRESS]
 
